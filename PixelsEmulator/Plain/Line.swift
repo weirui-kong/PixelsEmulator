@@ -10,7 +10,7 @@ struct Line: View {
     //temporarily set to horizontal
     let row: Int
     let length: Int
-    var pixels: [Pixel]
+    private var pixels: [Pixel]
 
     init(length: Int, row: Int, dr: CGFloat) {
         self.row = row
@@ -32,7 +32,7 @@ struct Line: View {
     }
 
     mutating func setPixelColor(column: Int, color: Color) {
-        let pre = pixels[column]
+        //let pre = pixels[column]
         //pixels[column] = Pixel(coord: pre.coord, r: pre.radius, activeColor: color)
         //print(color)
         //pixels.append(Pixel(coord: pre.coord, r: pre.radius, activeColor: color))

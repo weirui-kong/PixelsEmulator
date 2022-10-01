@@ -8,10 +8,10 @@ import SwiftUI
 
 struct Plane: View {
     let id: UUID
-    var lines: [Line]
     let width: Int
     let height: Int
     let defaultRadius: CGFloat
+    var lines: [Line]
 
     init(w: Int, h: Int, dr: CGFloat) {
         id = UUID()
@@ -32,6 +32,15 @@ struct Plane: View {
 
             }
         }
+    }
+
+
+    mutating func reset() {
+        var lines = [Line]()
+        for n in 0..<height {
+            lines.append(Line(length: width, row: n, dr: defaultRadius))
+        }
+        self.lines = lines
     }
 
     mutating func setPixelColor(x: Int, y: Int, c: Color) {
@@ -71,7 +80,7 @@ struct Plane: View {
             for x in _x1..._x2 {
                 let y = Double(x) * _k
                 let dy = y - Double(Int(y))
-                print(x, y, dy)
+                //print(x, y, dy)
                 if dy >= 0.5 {
                     coords.append(Coord(x: x, y: Int(Double(x) * _k) + 1))
                 } else {

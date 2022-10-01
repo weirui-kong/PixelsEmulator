@@ -9,27 +9,52 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var plane = Plane(w: 60, h: 80, dr: 10)
+    var body: some View {
+        MyPlane(w: 50, h: 50, dr: 5)
+    }
+
+}
+
+struct MyPlane: View {
+    let w: Int
+    let h: Int
+    let dr: CGFloat
+    @State var plane: Plane
+
+    init(w: Int, h: Int, dr: CGFloat) {
+        self.w = w
+        self.h = h
+        self.dr = dr
+        _plane = State(initialValue: Plane(w: w, h: h, dr: dr))
+    }
+
     var body: some View {
         ZStack {
             VStack {
                 plane
             }
-            Button("init") {
-                DispatchQueue.global().async {
-                    var of = 1
-                    while true {
-                        of += 10
-                        sleep(1)
-                        plane.drawLine(x1: 0, y1: 0, x2: 0 + of, y2: 80)
-                    }
+            HStack {
+                Button("init") {
+                    //test
+                    DispatchQueue.global().async {
+                        var of = 0
+                        while true {
+                            plane.drawLine(x1: 0, y1: 0, x2: 0 + of, y2: h)
+                            of += 10
+                            if of > w{
+                                break
+                            }
+                        }
 
+                    }
                 }
-                //plane.drawLine(x1: 0, y1: 0, x2: 10, y2: 60)
+                Button("reset") {
+                    plane.reset()
+                }
             }
-                    .background(Color.red)
         }
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

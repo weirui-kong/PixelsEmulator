@@ -4,17 +4,18 @@
 
 import Foundation
 import SwiftUI
+let PixelUnit = Rectangle()
 
 struct Pixel: View, Identifiable {
     let coord: Coord
     let id: UUID
-    var activeColor: Color
-    var radius: CGFloat
+    private var activeColor: Color
+    private var radius: CGFloat
 
     init(coord: Coord, r: CGFloat) {
         self.coord = coord
         radius = r
-        activeColor = Color.gray
+        activeColor = .gray.opacity(0.5)
         id = UUID()
     }
 
@@ -27,10 +28,11 @@ struct Pixel: View, Identifiable {
     }
 
     var body: some View {
-        Circle()
+        PixelUnit
                 .size(width: radius, height: radius)
                 .fill(activeColor)
     }
+
     mutating func setColor(c: Color){
         activeColor = c
     }
