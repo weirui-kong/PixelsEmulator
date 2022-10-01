@@ -12,12 +12,12 @@ struct Line: View {
     let length: Int
     private var pixels: [Pixel]
 
-    init(length: Int, row: Int, dr: CGFloat) {
+    init(length: Int, row: Int, di: CGFloat) {
         self.row = row
         self.length = length
         var pixels = [Pixel]()
         for i in 0..<length {
-            pixels.append(Pixel(coord: Coord(x: i, y: row), r: dr))
+            pixels.append(Pixel(coord: Coord(x: i, y: row), di: di))
         }
         self.pixels = pixels
     }

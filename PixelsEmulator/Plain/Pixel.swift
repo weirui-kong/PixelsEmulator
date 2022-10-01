@@ -10,27 +10,21 @@ struct Pixel: View, Identifiable {
     let coord: Coord
     let id: UUID
     private var activeColor: Color
-    private var radius: CGFloat
+    private var di: CGFloat
 
-    init(coord: Coord, r: CGFloat) {
-        self.coord = coord
-        radius = r
-        activeColor = .gray.opacity(0.5)
-        id = UUID()
-    }
 
-    init(coord: Coord, r: CGFloat, activeColor: Color) {
+    init(coord: Coord, di: CGFloat, activeColor: Color = .accentColor) {
         self.coord = coord
-        radius = r
+        self.di = di
         self.activeColor = activeColor
         id = UUID()
-        //print(activeColor)
     }
 
     var body: some View {
         PixelUnit
-                .size(width: radius, height: radius)
+                .size(width: di, height: di)
                 .fill(activeColor)
+                .animation(.easeInOut)
     }
 
     mutating func setColor(c: Color){

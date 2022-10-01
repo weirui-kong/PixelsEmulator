@@ -10,22 +10,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        MyPlane(w: 50, h: 50, dr: 5)
+        MyPlane(w: 50, h: 50, di: 10)
     }
 
 }
 
 struct MyPlane: View {
+
     let w: Int
     let h: Int
-    let dr: CGFloat
+    let di: CGFloat
     @State var plane: Plane
 
-    init(w: Int, h: Int, dr: CGFloat) {
+    //manually specify width,
+
+    init(w: Int, h: Int, di: CGFloat) {
         self.w = w
         self.h = h
-        self.dr = dr
-        _plane = State(initialValue: Plane(w: w, h: h, dr: dr))
+        self.di = di
+        _plane = State(initialValue: Plane(w: w, h: h, di: di))
     }
 
     var body: some View {
@@ -41,7 +44,7 @@ struct MyPlane: View {
                         while true {
                             plane.drawLine(x1: 0, y1: 0, x2: 0 + of, y2: h)
                             of += 10
-                            if of > w{
+                            if of > w {
                                 break
                             }
                         }

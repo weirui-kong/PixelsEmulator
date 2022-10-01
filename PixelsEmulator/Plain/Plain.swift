@@ -10,17 +10,17 @@ struct Plane: View {
     let id: UUID
     let width: Int
     let height: Int
-    let defaultRadius: CGFloat
-    var lines: [Line]
+    let defaultDiameter: CGFloat
+    private var lines: [Line]
 
-    init(w: Int, h: Int, dr: CGFloat) {
+    init(w: Int, h: Int, di: CGFloat) {
         id = UUID()
         height = h
         width = w
-        defaultRadius = dr
+        defaultDiameter = di
         var lines = [Line]()
         for n in 0..<height {
-            lines.append(Line(length: width, row: n, dr: defaultRadius))
+            lines.append(Line(length: width, row: n, di: defaultDiameter))
         }
         self.lines = lines
     }
@@ -29,7 +29,6 @@ struct Plane: View {
         VStack(spacing: 0) {
             ForEach(lines, id: \.row) { line in
                 line
-
             }
         }
     }
@@ -38,27 +37,36 @@ struct Plane: View {
     mutating func reset() {
         var lines = [Line]()
         for n in 0..<height {
-            lines.append(Line(length: width, row: n, dr: defaultRadius))
+            lines.append(Line(length: width, row: n, di: defaultDiameter))
         }
         self.lines = lines
     }
 
-    mutating func setPixelColor(x: Int, y: Int, c: Color) {
-        if (x >= 0 && y >= 0 && x < width && y < height) {
-            lines[y].setPixelColor(column: x, color: c)
+    mutating func setPixelColor(coord: Coord, c: Color) {
+        if (coord.x >= 0 && coord.y >= 0 && coord.x < width && coord.y < height) {
+            lines[coord.y].setPixelColor(column: coord.x, color: c)
         } else {
             //print("invalid coord")
         }
 
     }
 
-    mutating func drawPixels(coords: [Coord], c: Color) {
-        for i in 0..<coords.count {
-            setPixelColor(x: coords[i].x, y: coords[i].y, c: c)
+    mutating func drawPixels(coords: [Coord], c: Color, withDelay: Bool = false) {
+        if !withDelay {
+            for coord in coords {
+                setPixelColor(coord: coord, c: c)
+            }
+        } else {
+            for coord in coords {
+                //had to be finished
+                setPixelColor(coord: coord, c: c)
+            }
+
         }
+
     }
 
-    mutating func drawLine(x1: Int, y1: Int, x2: Int, y2: Int, c: Color = .red) {
+    mutating func drawLine(x1: Int, y1: Int, x2: Int, y2: Int, c: Color = .red, withDelay: Bool = false) {
         //bresenham method
         let k: Double = Double(y2 - y1) / Double(x2 - x1)
         //print(k)
@@ -90,8 +98,7 @@ struct Plane: View {
             coords = Reflect.reflectAcross_Y_X(coords: coords)
         }
 
-
-        drawPixels(coords: coords, c: c)
+        drawPixels(coords: coords, c: c, withDelay: true)
     }
 
 
