@@ -28,14 +28,10 @@ struct Line: View {
                 pixel
             }
         }
-                //.animation(.easeInOut)
     }
 
+
     mutating func setPixelColor(column: Int, color: Color) {
-        //let pre = pixels[column]
-        //pixels[column] = Pixel(coord: pre.coord, r: pre.radius, activeColor: color)
-        //print(color)
-        //pixels.append(Pixel(coord: pre.coord, r: pre.radius, activeColor: color))
         pixels[column].setColor(c: color)
 
     }

@@ -13,12 +13,16 @@
 		2092F3B65B71DA4578DE5FD9 /* Reflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092FB992A384ED03CCF4EA4 /* Reflect.swift */; };
 		2092F4CF5827261273AEA3E4 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F5145D1EA277B893010A /* Line.swift */; };
 		2092F5089286EDC42CD829F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092FAF12501B0D632AEE3B2 /* ContentView.swift */; };
+		2092F5273BFEC1390B5CC952 /* ShapesContainablePlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F495BDFE4E7DDDC1A633 /* ShapesContainablePlain.swift */; };
 		2092F60B34F92FC6C3AB1BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2092F6C400530EEEE0D029AC /* Assets.xcassets */; };
 		2092F712C94BB9DE9C38CE7F /* PixelsEmulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2D7F6C5B295DC8FA741 /* PixelsEmulatorUITestsLaunchTests.swift */; };
 		2092F77E0945C8BB5C1BDE25 /* PixelsEmulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F8526B0617164C90005E /* PixelsEmulatorApp.swift */; };
 		2092F805EBE1A166686167FF /* PixelsEmulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F112C96B0DAAA9DE1CE8 /* PixelsEmulatorUITests.swift */; };
+		2092F9270DC263152CBC608F /* MyPlane1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F1D3A186079F1D6D2B99 /* MyPlane1.swift */; };
 		2092F92F5DEB7910764A6E8C /* Plain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F152D882CA67C4ED2688 /* Plain.swift */; };
 		2092FAE89A61ECF73075B907 /* PixelsEmulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F99C30E77A81C85A5784 /* PixelsEmulatorTests.swift */; };
+		2092FAF0BFCA7FAC7D64D0A8 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F194E05A1C5EF8EA1121 /* Move.swift */; };
+		2092FE65139E553DE6F4F60D /* ShapeEmulated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092FD2696A961BF252AE712 /* ShapeEmulated.swift */; };
 		2092FE9B75B04D4A05B52F81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2092F9C2000EE09EE41F9E2C /* Preview Assets.xcassets */; };
 		2092FEBBC2C150B521231C54 /* SS.png in Resources */ = {isa = PBXBuildFile; fileRef = 2092F1CC56AFB4B1B23C57F6 /* SS.png */; };
 /* End PBXBuildFile section */
@@ -43,9 +47,12 @@
 /* Begin PBXFileReference section */
 		2092F112C96B0DAAA9DE1CE8 /* PixelsEmulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelsEmulatorUITests.swift; sourceTree = "<group>"; };
 		2092F152D882CA67C4ED2688 /* Plain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plain.swift; sourceTree = "<group>"; };
+		2092F194E05A1C5EF8EA1121 /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		2092F1CC56AFB4B1B23C57F6 /* SS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SS.png; sourceTree = "<group>"; };
+		2092F1D3A186079F1D6D2B99 /* MyPlane1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlane1.swift; sourceTree = "<group>"; };
 		2092F236BCD8FA65A859C8C1 /* PixelsEmulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PixelsEmulator.entitlements; sourceTree = "<group>"; };
 		2092F2D7F6C5B295DC8FA741 /* PixelsEmulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelsEmulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2092F495BDFE4E7DDDC1A633 /* ShapesContainablePlain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesContainablePlain.swift; sourceTree = "<group>"; };
 		2092F5145D1EA277B893010A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		2092F6C400530EEEE0D029AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2092F70D8F0FBE315095A137 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 		2092FB656DBC2532E246D407 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2092FB992A384ED03CCF4EA4 /* Reflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflect.swift; sourceTree = "<group>"; };
 		2092FBB81101ACEF8953ADF3 /* Coord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
+		2092FD2696A961BF252AE712 /* ShapeEmulated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeEmulated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2092F338B4D65246D48BAA4B /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				2092FD2696A961BF252AE712 /* ShapeEmulated.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		2092F406C0E546E0C56DA68E /* PixelsEmulatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2092FB992A384ED03CCF4EA4 /* Reflect.swift */,
+				2092F194E05A1C5EF8EA1121 /* Move.swift */,
 			);
 			path = Algos;
 			sourceTree = "<group>";
@@ -116,6 +133,15 @@
 				2092FBB81101ACEF8953ADF3 /* Coord.swift */,
 			);
 			path = Plain;
+			sourceTree = "<group>";
+		};
+		2092FBC3A528DC686819C6C2 /* Labs */ = {
+			isa = PBXGroup;
+			children = (
+				2092F1D3A186079F1D6D2B99 /* MyPlane1.swift */,
+				2092F495BDFE4E7DDDC1A633 /* ShapesContainablePlain.swift */,
+			);
+			path = Labs;
 			sourceTree = "<group>";
 		};
 		2092FC4AC90F510F4DD185C9 /* Products */ = {
@@ -135,6 +161,8 @@
 				2092F236BCD8FA65A859C8C1 /* PixelsEmulator.entitlements */,
 				2092F7BBD8BB7DF92EDE172D /* Plain */,
 				2092F5AA3F2780F38ED74864 /* Algos */,
+				2092F338B4D65246D48BAA4B /* Shapes */,
+				2092FBC3A528DC686819C6C2 /* Labs */,
 			);
 			path = PixelsEmulator;
 			sourceTree = "<group>";
@@ -294,6 +322,10 @@
 				2092F1C784C21301BB558295 /* Coord.swift in Sources */,
 				2092F3B65B71DA4578DE5FD9 /* Reflect.swift in Sources */,
 				2092F2C6D3F0D863667DD24C /* README.md in Sources */,
+				2092FAF0BFCA7FAC7D64D0A8 /* Move.swift in Sources */,
+				2092FE65139E553DE6F4F60D /* ShapeEmulated.swift in Sources */,
+				2092F9270DC263152CBC608F /* MyPlane1.swift in Sources */,
+				2092F5273BFEC1390B5CC952 /* ShapesContainablePlain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

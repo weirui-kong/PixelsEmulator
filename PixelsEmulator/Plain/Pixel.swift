@@ -4,11 +4,12 @@
 
 import Foundation
 import SwiftUI
+
 let PixelUnit = Rectangle()
 
-struct Pixel: View, Identifiable {
+struct Pixel: View {
     let coord: Coord
-    let id: UUID
+    //let id: UUID
     private var activeColor: Color
     private var di: CGFloat
 
@@ -17,7 +18,7 @@ struct Pixel: View, Identifiable {
         self.coord = coord
         self.di = di
         self.activeColor = activeColor
-        id = UUID()
+        //id = UUID()
     }
 
     var body: some View {
@@ -27,7 +28,7 @@ struct Pixel: View, Identifiable {
                 .animation(.easeInOut)
     }
 
-    mutating func setColor(c: Color){
+    mutating func setColor(c: Color) {
         activeColor = c
     }
 }

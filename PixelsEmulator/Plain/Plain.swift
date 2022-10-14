@@ -68,6 +68,7 @@ struct Plane: View {
 
     mutating func drawLine(x1: Int, y1: Int, x2: Int, y2: Int, c: Color = .red, withDelay: Bool = false) {
         //bresenham method
+
         let k: Double = Double(y2 - y1) / Double(x2 - x1)
         //print(k)
         var coords = [Coord]()
@@ -97,7 +98,6 @@ struct Plane: View {
             }
             coords = Reflect.reflectAcross_Y_X(coords: coords)
         }
-
         drawPixels(coords: coords, c: c, withDelay: true)
     }
 
